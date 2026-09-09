@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" data-motion="full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sagar Kotian</title>
+  <meta name="description" content="First non-eng hire. I bring in the demand, keep the customers, and grade the AI's homework. Founder's Office, GTM and Customer Success at Superjoin, Bengaluru. Play Pipeline Run." />
+  <meta name="theme-color" content="#F6F5F0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://sagar-kotian.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sagar Kotian" />
+  <meta property="og:description" content="First non-eng hire. I bring in the demand, keep the customers, and grade the AI's homework." />
+  <meta property="og:url" content="https://sagar-kotian.vercel.app/" />
+  <meta property="og:image" content="https://sagar-kotian.vercel.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" as="image" fetchpriority="high" type="image/avif" imagesrcset="/img/hero-480.avif 480w, /img/hero-640.avif 640w, /img/hero-800.avif 800w, /img/hero-1280.avif 1280w" imagesizes="(max-width: 899px) min(80vw, 380px), 420px" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      d.dataset.motion = rm ? 'reduced' : 'full';
+      var seen = false; try { seen = !!sessionStorage.getItem('seen'); } catch (e) {}
+      d.dataset.preload = (rm || seen) ? 'skip' : 'show';
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/styles/tokens.css" />
+  <link rel="stylesheet" href="/src/styles/fonts.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/hero.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__label mono"></div></div>
+  <div class="progress" aria-hidden="true"><div class="progress__bar"></div><div class="progress__runner" id="progress-runner"></div></div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__count mono"><span id="pre-count">00</span></div>
+    <canvas class="preloader__canvas" id="pre-canvas"></canvas>
+    <p class="preloader__word mono">LOADING THE PIPELINE</p>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo mono" href="#top" aria-label="SK, back to top">SK</a>
+    <nav class="nav__links mono" aria-label="Sections">
+      <a href="#run"><span>01</span>Run</a>
+      <a href="#startups"><span>02</span>Startups</a>
+      <a href="#built"><span>03</span>Built</a>
+      <a href="#about"><span>04</span>About</a>
+      <a href="#contact"><span>05</span>Say hi</a>
+    </nav>
+    <a class="nav__resume mono" href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="hero__meta mono" id="hero-meta"></p>
+          <h1 class="hero__name" id="hero-name">
+            <span class="hero__line"><span class="hero__word" id="hero-first"></span></span>
+            <span class="hero__line"><span class="hero__word hero__word--last" id="hero-last"></span></span>
+          </h1>
+          <p class="hero__tag serif" id="hero-tag"></p>
+          <div class="hero__cta">
+            <a class="btn btn--ink" data-magnetic href="#run" data-cursor="play">Play Pipeline Run</a>
+            <a class="btn" data-magnetic href="#contact">Say hi</a>
+          </div>
+        </div>
+        <figure class="hero__photo">
+          <div class="hero__frame">
+            <picture>
+              <source type="image/avif" srcset="/img/hero-480.avif 480w, /img/hero-640.avif 640w, /img/hero-800.avif 800w, /img/hero-1280.avif 1280w" sizes="(max-width: 899px) min(80vw, 380px), 420px" />
+              <source type="image/webp" srcset="/img/hero-480.webp 480w, /img/hero-640.webp 640w, /img/hero-800.webp 800w, /img/hero-1280.webp 1280w" sizes="(max-width: 899px) min(80vw, 380px), 420px" />
+              <img src="/img/hero.jpg" width="1279" height="1600" alt="Sagar Kotian in a dark blazer, smiling, in front of a wall of green ivy." fetchpriority="high" decoding="async" />
+            </picture>
+          </div>
+          <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="badge-circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <text class="badge__text"><textPath href="#badge-circle" id="badge-text"></textPath></text>
+            <circle cx="60" cy="60" r="6" fill="currentColor"/>
+          </svg>
+        </figure>
+      </div>
+      <div class="hero__ground">
+        <canvas class="hero__idle" id="hero-idle" aria-hidden="true"></canvas>
+        <button class="hero__hint mono" id="hero-hint" type="button" data-cursor="play">PRESS SPACE TO RUN ↓</button>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true" data-dark><div class="ticker__track" id="ticker"></div></div>
+
+    <section class="game" id="run" aria-labelledby="game-title">
+      <div class="game__stage" id="game-stage">
+        <canvas class="game__canvas" id="game-canvas" tabindex="0" aria-label="Pipeline Run, a jumping game. Press space or tap to jump."></canvas>
+        <div class="game__hud mono" id="hud" aria-live="off">
+          <span>DEMOS <b id="hud-demos">0</b></span><span>CUSTOMERS <b id="hud-customers">0</b></span><span>MONTH <b id="hud-month">1</b></span><span class="game__best">BEST <b id="hud-best">0</b></span>
+        </div>
+        <div class="game__overlay" id="game-start">
+          <p class="mono game__label">01 · RUN</p>
+          <h2 class="game__title" id="game-title">Pipeline Run</h2>
+          <p class="game__intro serif" id="game-intro"></p>
+          <button class="btn btn--ink" id="game-play" type="button" data-magnetic data-cursor="play">Start running</button>
+          <p class="mono game__controls" id="game-controls"></p>
+        </div>
+        <div class="game__overlay" id="game-over" hidden>
+          <p class="mono game__label">GAME OVER</p>
+          <h2 class="game__title game__title--sm" id="game-result"></h2>
+          <p class="game__compare serif" id="game-compare"></p>
+          <div class="game__actions">
+            <button class="btn btn--ink" id="game-again" type="button" data-magnetic data-cursor="play">Run again</button>
+            <a class="btn" href="#contact" id="game-sayhi" data-magnetic>Say hi</a>
+          </div>
+        </div>
+        <button class="game__leave mono" id="game-leave" type="button" hidden>ESC · LEAVE</button>
+      </div>
+    </section>
+
+    <section class="startups" id="startups" aria-labelledby="startups-h">
+      <div class="wrap section__head">
+        <p class="mono section__label">02 · STARTUPS</p>
+        <h2 class="h2" id="startups-h" data-reveal>Three startups,<br>one degree.</h2>
+        <p class="lede serif" data-reveal>Chief of staff, then founder’s office twice. All of it between lectures I was technically supposed to be attending.</p>
+      </div>
+      <div class="startups__pin" id="startups-pin">
+        <div class="startups__track" id="startups-track"></div>
+        <div class="startups__progress" aria-hidden="true"><i id="startups-bar"></i></div>
+      </div>
+    </section>
+
+    <section class="built" id="built" aria-labelledby="built-h">
+      <div class="wrap section__head">
+        <p class="mono section__label">03 · BUILT</p>
+        <h2 class="h2" id="built-h" data-reveal>Not an engineer.<br>Builds anyway.</h2>
+      </div>
+      <div class="wrap projects" id="projects"></div>
+    </section>
+
+    <section class="numbers" id="numbers" aria-label="Numbers" data-dark>
+      <div class="wrap"><ul class="odos" id="odos"></ul></div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-h">
+      <div class="wrap about__grid">
+        <div class="about__text">
+          <p class="mono section__label">04 · ABOUT</p>
+          <h2 class="h2" id="about-h" data-reveal>Whatever is on<br>fire this week.</h2>
+          <ul class="about__lines serif" id="about-lines"></ul>
+          <dl class="about__facts mono" id="about-facts"></dl>
+        </div>
+        <div class="about__photos">
+          <figure class="about__wall" data-clip>
+            <picture>
+              <source type="image/avif" srcset="/img/wall-720.avif 720w, /img/wall-1200.avif 1200w, /img/wall-1686.avif 1686w" sizes="(max-width: 899px) 92vw, 560px" />
+              <source type="image/webp" srcset="/img/wall-720.webp 720w, /img/wall-1200.webp 1200w, /img/wall-1686.webp 1686w" sizes="(max-width: 899px) 92vw, 560px" />
+              <img src="/img/wall.jpg" width="1686" height="868" alt="Sagar at his desk, glasses on, with a whiteboard of sticky notes behind him." loading="lazy" decoding="async" data-parallax />
+            </picture>
+            <figcaption class="mono">THE WALL BEHIND MY DESK</figcaption>
+          </figure>
+          <figure class="about__casual" data-clip>
+            <picture>
+              <source type="image/avif" srcset="/img/casual-480.avif 480w, /img/casual-960.avif 960w" sizes="220px" />
+              <source type="image/webp" srcset="/img/casual-480.webp 480w, /img/casual-960.webp 960w" sizes="220px" />
+              <img src="/img/casual.jpg" width="963" height="1280" alt="Sagar in a black polo, smiling at a cafe table." loading="lazy" decoding="async" data-parallax />
+            </picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sayhi" id="contact" aria-labelledby="sayhi-h">
+      <div class="wrap">
+        <p class="mono section__label">05 · SAY HI</p>
+        <h2 class="sayhi__word" id="sayhi-h" aria-label="Say hi"><span aria-hidden="true" id="sayhi-chars"></span></h2>
+        <ul class="sayhi__links mono" id="sayhi-links"></ul>
+        <p class="sayhi__line serif">Coffee in Bengaluru: yes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono wrap">
+    <p>Built by hand. Vite, GSAP, Lenis, one canvas. No templates were harmed.</p>
+    <p>© 2026 Sagar Kotian</p>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

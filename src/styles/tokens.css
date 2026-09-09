@@ -1,0 +1,27 @@
+:root {
+  --paper: #F6F5F0;
+  --paper-2: #EDECE6;
+  --ink: #0E0E0C;
+  --ink-2: #4A4A46;
+  --ink-3: #62625C;
+  --line: #D6D5CE;
+  --accent: #F04E15;
+  --accent-2: #FFD9CB;
+
+  --font-display: 'Space Grotesk', 'Space Grotesk Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, Menlo, Consolas, monospace;
+
+  --w-max: 1240px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --section-y: clamp(80px, 12vw, 170px);
+
+  --t-mono: clamp(0.68rem, 0.62rem + 0.25vw, 0.8rem);
+  --t-body: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --t-lede: clamp(1.35rem, 1.1rem + 1.1vw, 2rem);
+  --t-h2: clamp(2.6rem, 1.6rem + 4.6vw, 6.4rem);
+  --t-name: clamp(3.6rem, 12.5vw, 12.5rem);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+}

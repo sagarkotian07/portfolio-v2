@@ -1,0 +1,8 @@
+node_modules
+dist
+.vercel
+.DS_Store
+qa/
+*.log
+# originals stay local; public/img and public/video hold the generated outputs
+assets/src/
