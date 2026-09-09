@@ -17,13 +17,6 @@ export function initScroll() {
   document.fonts.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 }
-export function initNavTone() {
-  const nav = document.getElementById('nav');
-  if (!nav) return;
-  document.querySelectorAll<HTMLElement>('[data-dark]').forEach((band) => {
-    ScrollTrigger.create({ trigger: band, start: 'top 34px', end: 'bottom 34px', toggleClass: { targets: nav, className: 'nav--light' } });
-  });
-}
 export function scrollTo(target: string | HTMLElement, opts: { immediate?: boolean } = {}) {
   if (lenis) lenis.scrollTo(target, { duration: 1.1, immediate: opts.immediate });
   else (typeof target === 'string' ? document.querySelector(target) : target)?.scrollIntoView({ behavior: 'auto' });

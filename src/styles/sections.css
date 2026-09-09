@@ -34,12 +34,8 @@ html.is-playing .game__canvas:focus-visible { outline: none; }
 .stop__org { font-size: clamp(2.4rem, 1.8rem + 3.6vw, 5.6rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; text-transform: uppercase; margin-top: 18px; }
 .stop__role { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 1.1rem + 1vw, 2rem); line-height: 1.2; margin-top: 14px; color: var(--ink-2); }
 .stop__dates { margin-top: 18px; color: var(--ink-3); }
-.stop__about { margin-top: 10px; color: var(--ink-3); font-size: 0.95rem; max-width: 42ch; }
 .stop__body { align-self: center; }
-.stop__bullets { display: grid; gap: 14px; }
-.stop__bullets li { position: relative; padding-left: 26px; max-width: 52ch; color: var(--ink); }
-.stop__bullets li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 12px; height: 1px; background: var(--accent); }
-.stop__closer { margin-top: 26px; font-family: var(--font-serif); font-style: italic; font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.7rem); line-height: 1.25; color: var(--accent); max-width: 34ch; }
+.stop__line { font-family: var(--font-serif); font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.6rem); line-height: 1.2; max-width: 22ch; }
 .startups__progress { position: absolute; left: var(--gutter); right: var(--gutter); top: 0; height: 1px; background: var(--line); }
 .startups__progress i { display: block; height: 100%; width: 100%; background: var(--ink); transform-origin: left; transform: scaleX(0); }
 @media (max-width: 899px) {
@@ -61,11 +57,8 @@ html.is-playing .game__canvas:focus-visible { outline: none; }
 .project__play { position: absolute; right: 16px; bottom: 16px; width: 56px; height: 56px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; transition: background 0.3s, transform 0.4s var(--ease); }
 .project__play svg { width: 18px; height: 18px; margin-left: 2px; }
 .project__media:hover .project__play { background: var(--accent); transform: scale(1.08); }
-.project__index { color: var(--ink-3); margin-bottom: 14px; }
 .project__title { font-size: clamp(1.7rem, 1.3rem + 1.8vw, 3rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1; text-transform: uppercase; }
-.project__blurb { margin-top: 16px; color: var(--ink-2); max-width: 46ch; }
-.project__stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-.project__stack li { font-family: var(--font-mono); font-size: var(--t-mono); letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--line); padding: 5px 9px; color: var(--ink-2); }
+.project__line { margin-top: 14px; font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem); line-height: 1.25; color: var(--ink-2); max-width: 30ch; }
 .project__links { display: flex; gap: 22px; margin-top: 22px; }
 .project__links a { position: relative; padding-bottom: 3px; }
 .project__links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--ink); transform: scaleX(1); transform-origin: left; transition: transform 0.4s var(--ease), background 0.2s; }
@@ -75,14 +68,6 @@ html.is-playing .game__canvas:focus-visible { outline: none; }
   .project:nth-child(even) .project__media { order: 0; }
 }
 
-/* ---------- numbers (odometer) ---------- */
-.numbers { border-block: 1px solid var(--ink); background: var(--ink); color: var(--paper); padding-block: clamp(48px, 7vw, 96px); }
-.odos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) 24px; }
-.odo { display: block; font-size: clamp(2.4rem, 1.6rem + 3.6vw, 5.4rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.odo__col { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
-.odo__col span { display: block; height: 1em; will-change: transform; }
-.odo__label { display: block; margin-top: 12px; color: rgba(246, 245, 240, 0.6); }
-@media (max-width: 720px) { .odos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- about ---------- */
 .about { padding-block: var(--section-y); }
@@ -90,8 +75,6 @@ html.is-playing .game__canvas:focus-visible { outline: none; }
 .about__lines { display: grid; gap: 16px; margin-top: 30px; }
 .about__lines li { font-size: clamp(1.35rem, 1.1rem + 1.2vw, 2.1rem); line-height: 1.2; }
 .about__lines li::first-letter { color: var(--accent); }
-.about__facts { margin-top: 36px; display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 18px; }
-.about__facts dt { color: var(--ink-3); }
 .about__photos { position: relative; padding-bottom: 70px; }
 .about__wall { overflow: hidden; border: 1px solid var(--ink); }
 .about__wall picture { display: block; overflow: hidden; aspect-ratio: 16 / 9; }

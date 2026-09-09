@@ -10,7 +10,6 @@ html[data-preload="skip"] .preloader { display: none; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between;
   padding: 18px var(--gutter); color: var(--ink); transition: opacity 0.4s var(--ease), color 0.3s;
 }
-.nav.nav--light { color: var(--paper); }
 html.is-playing .nav { opacity: 0; pointer-events: none; }
 .nav__logo { font-weight: 600; font-size: 0.85rem; }
 .nav__links { display: flex; gap: clamp(14px, 2.2vw, 28px); }
@@ -28,8 +27,7 @@ html.is-playing .nav { opacity: 0; pointer-events: none; }
 .hero__line { display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
 .hero__word { display: block; will-change: transform; }
 .hero__word--last { color: var(--accent); }
-.hero__tag { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2.3rem); line-height: 1.15; max-width: 22ch; margin-top: clamp(22px, 3vw, 40px); color: var(--ink); }
-.hero__tag em { color: var(--ink-3); }
+.hero__tag { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem); line-height: 1.15; max-width: 20ch; margin-top: clamp(22px, 3vw, 40px); color: var(--ink); }
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: clamp(24px, 3vw, 40px); }
 .hero__photo { position: relative; justify-self: end; width: 100%; }
 .hero__frame { position: relative; overflow: hidden; border: 1px solid var(--ink); background: var(--paper-2); aspect-ratio: 4 / 5; }
@@ -45,12 +43,6 @@ html[data-motion="reduced"] .hero__frame::after { display: none; }
 .hero__hint { display: block; width: fit-content; margin: 16px auto 22px; color: var(--ink-3); transition: color 0.2s; }
 .hero__hint:hover { color: var(--accent); }
 
-/* ---------- ticker ---------- */
-.ticker { overflow: hidden; border-block: 1px solid var(--ink); padding: 16px 0; background: var(--ink); color: var(--paper); }
-.ticker__track { display: flex; width: max-content; will-change: transform; }
-.ticker__item { font-family: var(--font-mono); font-size: var(--t-mono); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; }
-.ticker__item i { font-style: normal; color: var(--accent); }
-html[data-motion="reduced"] .ticker__track { transform: none !important; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 899px) {

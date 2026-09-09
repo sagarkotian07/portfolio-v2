@@ -1,12 +1,10 @@
 import { renderAll, initCopyEmail } from './modules/render';
-import { initScroll, initNavTone, scrollTo, lenis } from './modules/scroll';
+import { initScroll, scrollTo, lenis } from './modules/scroll';
 import { runPreloader } from './modules/preloader';
 import { initHero } from './modules/hero';
 import { initReveals } from './modules/reveal';
-import { initTicker } from './modules/ticker';
 import { initStartups } from './modules/startups';
 import { initProjects } from './modules/projects';
-import { initOdometers } from './modules/odometer';
 import { initSayHi } from './modules/sayhi';
 import { initProgress } from './modules/progress';
 import { mountGame } from './game';
@@ -28,7 +26,7 @@ document.fonts.ready.then(() => runPreloader().then(() => heroIntro?.()));
 
 // everything below the fold can wait for a quiet moment
 const later = () => {
-  initReveals(); initProjects(); initOdometers(); initStartups(); initTicker(); initProgress(); initNavTone();
+  initReveals(); initProjects(); initStartups(); initProgress();
   if (rich) {
     import('./modules/cursor').then((m) => m.initCursor());
     import('./modules/magnetic').then((m) => m.initMagnetic());

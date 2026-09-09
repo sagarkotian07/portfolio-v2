@@ -16,7 +16,6 @@ export function mountGame(opts: { onPlay(): void; onStop(): void }) {
     onOver(d, c, m, best) {
       hud.best.textContent = String(best);
       q('#game-result').textContent = copy.result(d, c, m);
-      q('#game-compare').textContent = copy.compare + (d >= 10 && d <= 20 ? ' You would fit right in.' : d > 20 ? ' You are hired.' : '');
       over.hidden = false; leave.hidden = true;
       stage.classList.add('is-shaking'); setTimeout(() => stage.classList.remove('is-shaking'), 300);
       deactivate();

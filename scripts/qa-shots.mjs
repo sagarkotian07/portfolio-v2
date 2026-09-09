@@ -36,7 +36,6 @@ async function run(name, ctxOpts, { fullPage = true, settle = 4500, scrollThroug
     motion: document.documentElement.dataset.motion,
     preloaderGone: !document.querySelector('.preloader:not([hidden])'),
     gameCanvas: !!document.querySelector('canvas.game__canvas'),
-    firstCounter: document.querySelector('.odo')?.textContent?.trim(),
   }));
   console.log(name, JSON.stringify(metrics));
   await ctx.close();

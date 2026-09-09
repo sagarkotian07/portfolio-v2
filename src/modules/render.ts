@@ -1,4 +1,4 @@
-import { hero, facts, stops, projects, counters, about, links, game } from '../content';
+import { hero, stops, projects, about, links, game } from '../content';
 import { images, type ImageKey } from '../generated/images';
 import { q, esc } from './prefs';
 
@@ -13,26 +13,23 @@ export function renderAll() {
   q('#hero-meta').textContent = hero.meta;
   q('#hero-first').textContent = hero.first;
   q('#hero-last').textContent = hero.last;
-  q('#hero-tag').innerHTML = `<em>${esc(hero.tagEm)}</em> ${esc(hero.tag)}`;
+  q('#hero-tag').textContent = hero.line;
+  q<HTMLAnchorElement>('#hero-whatsapp').href = links.whatsapp;
+  q<HTMLAnchorElement>('#game-sayhi').href = links.whatsapp;
   q('#badge-text').textContent = hero.badge;
-
-  q('#ticker').innerHTML = [...facts, ...facts].map((f) => `<span class="ticker__item">${esc(f)}<i>✦</i></span>`).join('');
 
   q('#game-intro').textContent = game.intro;
   q('#game-controls').textContent = game.controls;
+  q('#game-compare').textContent = game.after;
 
-  q('#startups-track').innerHTML = stops.map((s) => `<article class="stop">
+  q('#startups-track').innerHTML = stops.map((st) => `<article class="stop">
     <div class="stop__head">
-      <p class="stop__index" aria-hidden="true">${s.index}</p>
-      <h3 class="stop__org">${esc(s.org)}</h3>
-      <p class="stop__role">${esc(s.role)}</p>
-      <p class="stop__dates mono">${esc(s.dates)}</p>
-      ${s.about ? `<p class="stop__about">${esc(s.about)}</p>` : ''}
+      <p class="stop__index" aria-hidden="true">${st.index}</p>
+      <h3 class="stop__org">${esc(st.org)}</h3>
+      <p class="stop__role">${esc(st.role)}</p>
+      <p class="stop__dates mono">${esc(st.dates)}</p>
     </div>
-    <div class="stop__body">
-      <ul class="stop__bullets">${s.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
-      <p class="stop__closer">${esc(s.closer)}</p>
-    </div>
+    <div class="stop__body"><p class="stop__line">${esc(st.line)}</p></div>
   </article>`).join('');
 
   q('#projects').innerHTML = projects.map((p) => {
@@ -48,29 +45,20 @@ export function renderAll() {
     return `<article class="project">
       ${media}
       <div class="project__text">
-        <p class="project__index mono">${p.index} / 0${projects.length}</p>
         <h3 class="project__title" data-reveal>${esc(p.title)}</h3>
-        <p class="project__blurb">${esc(p.blurb)}</p>
-        <ul class="project__stack" aria-label="Built with">${p.stack.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
-        <div class="project__links mono">
-          <a href="${p.url}" target="_blank" rel="noopener">${esc(p.cta)} ↗</a>
-          ${p.kind === 'site' ? `<a href="${p.repo}" target="_blank" rel="noopener">Code ↗</a>` : ''}
-        </div>
+        <p class="project__line serif">${esc(p.line)}</p>
+        <div class="project__links mono"><a href="${p.url}" target="_blank" rel="noopener">${esc(p.cta)} ↗</a></div>
       </div>
     </article>`;
   }).join('');
 
-  q('#odos').innerHTML = counters.map((c) => `<li><span class="odo" data-value="${esc(c.value)}">${esc(c.value)}</span><span class="odo__label mono">${esc(c.label)}</span></li>`).join('');
-
   q('#about-lines').innerHTML = about.lines.map((l) => `<li data-reveal>${esc(l)}</li>`).join('');
-  q('#about-facts').innerHTML = about.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
 
   q('#sayhi-chars').innerHTML = [...'SAY HI'].map((c) => c === ' ' ? `<span class="ch sp"> </span>` : `<span class="ch">${c}</span>`).join('');
   q('#sayhi-links').innerHTML = `
+    <li><a class="sayhi__row" href="${links.whatsapp}" target="_blank" rel="noopener" data-cursor="open"><span>WhatsApp</span><small>+91 93217 47802 ↗</small></a></li>
     <li><button class="sayhi__row" type="button" id="copy-email" data-cursor="copy"><span>${esc(links.email)}</span><small>copy</small></button></li>
-    <li><a class="sayhi__row" href="${links.linkedin}" target="_blank" rel="noopener" data-cursor="open"><span>linkedin.com/in/sagar-kotian-</span><small>↗</small></a></li>
-    <li><a class="sayhi__row" href="${links.github}" target="_blank" rel="noopener" data-cursor="open"><span>github.com/sagarkotian07</span><small>↗</small></a></li>
-    <li><a class="sayhi__row" href="${links.resume}" target="_blank" rel="noopener" data-cursor="open"><span>Resume</span><small>PDF ↗</small></a></li>`;
+    <li><a class="sayhi__row" href="${links.linkedin}" target="_blank" rel="noopener" data-cursor="open"><span>LinkedIn</span><small>↗</small></a></li>`;
 }
 
 export function initCopyEmail() {
