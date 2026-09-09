@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sagar Kotian</title>
-  <meta name="description" content="Sagar Kotian. Founder’s office at Superjoin, Bengaluru. I like the part of a startup where nothing has an owner yet. Play Pipeline Run." />
+  <meta name="description" content="Sagar Kotian. Founder’s office at Superjoin, Bengaluru. I like the part of a startup where nothing has an owner yet. Play Coffee Run." />
   <meta name="theme-color" content="#F6F5F0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://sagar-kotian.vercel.app/" />
@@ -42,13 +42,13 @@
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__count mono"><span id="pre-count">00</span></div>
     <canvas class="preloader__canvas" id="pre-canvas"></canvas>
-    <p class="preloader__word mono">LOADING THE PIPELINE</p>
+    <p class="preloader__word mono">BREWING</p>
   </div>
 
   <header class="nav" id="nav">
     <a class="nav__logo mono" href="#top" aria-label="SK, back to top">SK</a>
     <nav class="nav__links mono" aria-label="Sections">
-      <a href="#run"><span>01</span>Run</a>
+      <a href="#run"><span>01</span>Play</a>
       <a href="#work"><span>02</span>Work</a>
       <a href="#built"><span>03</span>Built</a>
       <a href="#about"><span>04</span>About</a>
@@ -68,7 +68,7 @@
           </h1>
           <p class="hero__tag serif" id="hero-tag"></p>
           <div class="hero__cta">
-            <a class="btn btn--ink" data-magnetic href="#run" data-cursor="play">Play Pipeline Run</a>
+            <a class="btn btn--ink" data-magnetic href="#run" data-cursor="play">Play Coffee Run</a>
             <a class="btn" data-magnetic id="hero-whatsapp" href="#" target="_blank" rel="noopener" data-cursor="open">Say hi on WhatsApp</a>
           </div>
         </div>
@@ -97,19 +97,19 @@
 
     <section class="game" id="run" aria-labelledby="game-title">
       <div class="game__stage" id="game-stage">
-        <canvas class="game__canvas" id="game-canvas" tabindex="0" aria-label="Pipeline Run, a jumping game. Press space or tap to jump."></canvas>
+        <canvas class="game__canvas" id="game-canvas" tabindex="0" aria-label="Coffee Run, a jumping game. Press space or tap to jump."></canvas>
         <div class="game__hud mono" id="hud" aria-live="off">
-          <span>DEMOS <b id="hud-demos">0</b></span><span>CUSTOMERS <b id="hud-customers">0</b></span><span>MONTH <b id="hud-month">1</b></span><span class="game__best">BEST <b id="hud-best">0</b></span>
+          <span>COFFEE <b id="hud-coffee">0</b></span><span>DISTANCE <b id="hud-dist">0 m</b></span><span class="game__best">BEST <b id="hud-best">0</b></span>
         </div>
         <div class="game__overlay" id="game-start">
-          <p class="mono game__label">01 · RUN</p>
-          <h2 class="game__title" id="game-title">Pipeline Run</h2>
+          <p class="mono game__label">01 · PLAY</p>
+          <h2 class="game__title" id="game-title">Coffee Run</h2>
           <p class="game__intro serif" id="game-intro"></p>
           <button class="btn btn--ink" id="game-play" type="button" data-magnetic data-cursor="play">Start running</button>
           <p class="mono game__controls" id="game-controls"></p>
         </div>
         <div class="game__overlay" id="game-over" hidden>
-          <p class="mono game__label">GAME OVER</p>
+          <p class="mono game__label">OUCH</p>
           <h2 class="game__title game__title--sm" id="game-result"></h2>
           <p class="game__compare serif" id="game-compare"></p>
           <div class="game__actions">

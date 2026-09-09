@@ -20,7 +20,6 @@ export function renderAll() {
 
   q('#game-intro').textContent = game.intro;
   q('#game-controls').textContent = game.controls;
-  q('#game-compare').textContent = game.after;
 
   q('#startups-track').innerHTML = stops.map((st) => `<article class="stop">
     <div class="stop__head">

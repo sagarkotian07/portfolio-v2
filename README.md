@@ -2,7 +2,7 @@
 
 Personal site with a game in it. Ink on paper, one accent, Space Grotesk and Instrument Serif.
 
-**Pipeline Run** is an endless runner about the job: jump over bounced emails, no-shows and duplicate leads, collect demos, land a customer. One canvas, no game engine, keyboard and touch.
+**Coffee Run** is an endless runner: dodge potholes, autos and the odd cow, collect filter coffee. One canvas, no game engine, keyboard and touch. Nothing in it is about the site owner.
 
 ## Stack
 
